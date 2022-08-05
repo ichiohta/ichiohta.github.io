@@ -39134,7 +39134,7 @@ var mapStateToProps = function (state) {
     var _a, _b;
     var source = state.source, target = state.target;
     return {
-        backgroundImageSrc: '/screenshots/dialog_xx.png',
+        backgroundImageSrc: 'screenshots/dialog_xx.png',
         source: (_a = source === null || source === void 0 ? void 0 : source.value) !== null && _a !== void 0 ? _a : '',
         target: (_b = target === null || target === void 0 ? void 0 : target.value) !== null && _b !== void 0 ? _b : '',
         width: 512,
