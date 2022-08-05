@@ -39128,13 +39128,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "../node_modules/react-redux/es/index.js");
 /* harmony import */ var _screenshot_renderer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./screenshot-renderer */ "./components/app/screenshot-renderer.tsx");
+/* harmony import */ var assets_screenshots_dialog_xx_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! assets/screenshots/dialog_xx.png */ "../assets/screenshots/dialog_xx.png");
+
 
 
 var mapStateToProps = function (state) {
     var _a, _b;
     var source = state.source, target = state.target;
     return {
-        backgroundImageSrc: 'screenshots/dialog_xx.png',
+        backgroundImageSrc: assets_screenshots_dialog_xx_png__WEBPACK_IMPORTED_MODULE_2__,
         source: (_a = source === null || source === void 0 ? void 0 : source.value) !== null && _a !== void 0 ? _a : '',
         target: (_b = target === null || target === void 0 ? void 0 : target.value) !== null && _b !== void 0 ? _b : '',
         width: 512,
@@ -41106,6 +41108,17 @@ module.exports = __webpack_require__.p + "fonts/98abaf29091324a8c03e.ttf";
 
 "use strict";
 module.exports = __webpack_require__.p + "fonts/9e90e354615ccd08ff26.ttf";
+
+/***/ }),
+
+/***/ "../assets/screenshots/dialog_xx.png":
+/*!*******************************************!*\
+  !*** ../assets/screenshots/dialog_xx.png ***!
+  \*******************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "fonts/6aeb63cb4fb27197568b.png";
 
 /***/ }),
 
