@@ -40595,6 +40595,9 @@ var ResourceStore = (function () {
                                 contentHash = (0,_hash_content__WEBPACK_IMPORTED_MODULE_1__.hashContent)(value);
                                 toSet = existing
                                     ? __assign(__assign({}, resource), { id: existing.id, version: existing.version + 1, contentHash: contentHash }) : __assign(__assign({}, resource), { version: 1, contentHash: contentHash });
+                                if (textId === 'MSG_END') {
+                                    console.log("!".concat(JSON.stringify(toSet)));
+                                }
                                 _b = Number;
                                 return [4, (0,_promisify_request__WEBPACK_IMPORTED_MODULE_0__.promisify)(store.put(toSet))];
                             case 2:
@@ -40730,6 +40733,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "deserialize": () => (/* binding */ deserialize),
 /* harmony export */   "serialize": () => (/* binding */ serialize)
 /* harmony export */ });
+var __assign = (undefined && undefined.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 var __values = (undefined && undefined.__values) || function(o) {
     var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
     if (m) return m.call(o);
@@ -40758,7 +40772,7 @@ var __read = (undefined && undefined.__read) || function (o, n) {
     return ar;
 };
 var headerRegex = /;\s*localeId=(([a-zA-Z]+)(-[a-zA-Z]+)?(-[a-zA-Z]+)?)/;
-var stringRegex = /\[\s*([A-Za-z0-9]+)_([A-Za-z0-9]+)\s*:\s*([^[\]]+)\]/g;
+var stringRegex = /\[\s*([A-Za-z0-9]+)_([A-Za-z0-9]+)\s*:\s*([^[\]]+)\](\s*;\s*([^$\r\n]+))?/g;
 var deserialize = function (data, defaultLocale) {
     var e_1, _a;
     if (defaultLocale === void 0) { defaultLocale = 'en'; }
@@ -40769,14 +40783,10 @@ var deserialize = function (data, defaultLocale) {
     try {
         for (var resourceMatches_1 = __values(resourceMatches), resourceMatches_1_1 = resourceMatches_1.next(); !resourceMatches_1_1.done; resourceMatches_1_1 = resourceMatches_1.next()) {
             var resourceMatch = resourceMatches_1_1.value;
-            var _b = __read(resourceMatch.slice(1), 3), groupId = _b[0], subId = _b[1], value = _b[2];
+            var _b = __read(resourceMatch.slice(1), 5), groupId = _b[0], subId = _b[1], value = _b[2], ignore = _b[3], comment = _b[4];
             var textId = "".concat(groupId, "_").concat(subId);
-            resources.push({
-                textId: textId,
-                groupId: groupId,
-                value: value,
-                localeId: localeId,
-            });
+            var optional = comment ? { comment: comment } : {};
+            resources.push(__assign({ textId: textId, groupId: groupId, value: value, localeId: localeId }, optional));
         }
     }
     catch (e_1_1) { e_1 = { error: e_1_1 }; }
