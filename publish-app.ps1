@@ -35,6 +35,7 @@ function replicate {
 function commit {
   $comment = "Updated INF_TPRTR on $(Get-Date)";
   git commit -m $commit
+  git push
 }
 
 build
