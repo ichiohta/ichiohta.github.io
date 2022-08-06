@@ -8,6 +8,10 @@
 <body>
   <div id="root"></div>
 </body>
-<script src='bundle.js'></script>
+<script>
+  var s = document.createElement("script");
+  s.src = "bundle.js?q=" + (new Date().getTime().toString());
+  document.body.appendChild(s);
+</script>
 
 </html>
