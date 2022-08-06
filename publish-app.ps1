@@ -1,6 +1,6 @@
 param (
   [string] $ProjectPath = "../INF_TRPRTR",
-  [string] $OutputPath = "./INF_TPRTR",
+  [string] $OutputPath = "./INF_TRPRTR",
   [switch] $Commit
 )
 
