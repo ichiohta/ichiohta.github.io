@@ -1,13 +1,13 @@
 {
   "id": "INF_TRPRTR",
-  "name": "INF_TRPRTR: Infinity Visual Translation Checker",
+  "name": "INF_TRPRTR",
   "short_name": "INF_TRPRTR",
   "start_url": "index.html",
   "display": "standalone",
   "background_color": "#5900b3",
-  "theme_color": "black",
+  "theme_color": "#515151",
   "scope": ".",
-  "description": "",
+  "description": "Infinity GBC Visual Translation Checker",
   "icons": [
     {
       "src": "icons/icon-192x192.png",
