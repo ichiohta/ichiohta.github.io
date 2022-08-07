@@ -16,6 +16,15 @@
   document.body.appendChild(s);
 </script>
 <script>
+  window.addEventListener('resize', () => {
+    let defaultWidth = 1255;
+    let defaultHeight = 650;
+    windw.resizeTo(() => {
+      window.resizeTo(defaultHeight, fixedHeight);
+    });
+  });
+</script>
+<script>
   window.addEventListener('load', () => { registerSW(); });
   async function registerSW() {
     if ('serviceWorker' in navigator) {
