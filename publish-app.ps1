@@ -1,7 +1,7 @@
 param (
   [string] $ProjectPath = "../INF_TRPRTR",
   [string] $OutputPath = "./INF_TRPRTR",
-  [switch] $Commit
+  [switch] $DoNotCommit
 )
 
 $folderPath = [IO.Path]::GetDirectoryName($PSCommandPath)
@@ -34,7 +34,7 @@ function replicate {
 
 function commit {
   $comment = "Updated INF_TPRTR on $(Get-Date)";
-  git commit -m $commit
+  git commit -m $comment
   git push
 }
 
@@ -42,6 +42,6 @@ build
 replicate
 git add --all
 
-if ($Commit.IsPresent) {
+if ($DoNotCommit.IsPresent -eq $false) {
   commit
 }
